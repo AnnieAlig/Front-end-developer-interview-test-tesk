@@ -1,27 +1,25 @@
-# TestFront
+# Test task for front-end developer 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+## Main task
 
-## Development server
+Most of the layout of test project is just a dummy dashboard template copied from bootstrap demos website. You will find a empty datarange component. 
+Your task will be to copy datarange picker from google adwords interface.
+Expected result: 
+- Rendered month calendars for 2 years. Ignore month select dropdown and arrows.
+- when date input is focused, date has a format of 7/17/2018, when out of focus - Jul 7, 2018
+- Implement same styles for dates in calendar for selected state as in adwords implementation (start of range, end of range, date between start & end of selected range). Ignore 'invisible/gray' hover state for not yet selected ranges for now.
+- In table heading section you can find 'Place for range'. Put a component, that shows the selected range and is updated on every range update. Localize 'MMMM d, y' format for it and localize it to French.
+- For pre-defined ranges selector on the left column - implement all of them, but ignore 'Compare' functionality.
+- You can't install 3rd-party daterange picker packages, but can use those implementations as a base for your solution if you need a clue.
+- You can use any 3rd party library like jquery, momentjs or any other on your choice.
+- Mobile layout is irrelevant for now. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You can create as many components/services/pipes for this task as needed, but try to keep them as clean/readable as possible.
+Don't dedicate to the task more then 8h. If 8h expired - push what you have done as it is.
 
-## Code scaffolding
+If you are stack with main task or have not finished it during 8h, you can complete this additional tasks: 
+1. Transform Layout and Core modules to be singletons.
+2. Provide app init factory that fetches auth data before app init. You can use dummy auth method from AuthenticationService, that just returns true;
+If you know angular well - this will be fast tasks for you.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+We use pug for the project, but if you are not familiar with pug/jade, you can switch to html by renaming file extension.
