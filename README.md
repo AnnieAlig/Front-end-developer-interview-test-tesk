@@ -2,6 +2,8 @@
 
 ## Main task
 
+Fork a project before starting working on it.
+
 Most of the layout of test project is just a dummy dashboard template copied from bootstrap demos website. You will find a empty datarange component. 
 Your task will be to copy datarange picker from google adwords interface.
 Expected result: 
