@@ -17,7 +17,7 @@ Expected result:
 You can create as many components/services/pipes for this task as needed, but try to keep them as clean/readable as possible.
 Don't dedicate to the task more then 8h. If 8h expired - push what you have done as it is.
 
-If you are stack with main task or have not finished it during 8h, you can complete this additional tasks: 
+If you want to add few more points to your score you can complete these additional tasks:
 1. Transform Layout and Core modules to be singletons.
 2. Provide app init factory that fetches auth data before app init. You can use dummy auth method from AuthenticationService, that just returns true;
 If you know angular well - this will be fast tasks for you.
