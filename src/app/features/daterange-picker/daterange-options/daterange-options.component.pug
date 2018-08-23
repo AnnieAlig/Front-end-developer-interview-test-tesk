@@ -1,0 +1,25 @@
+.options-list
+  .list-group
+    button(class="list-group-item list-group-item-action", (click)="setOption('Custom');", [ngClass]="{'active':ds.selectedOption === 'Custom'}") Custom
+  .list-group
+    ng-template(ngFor let-c="count" let-option [ngForOf]="options")
+      .list-group-item.list-group-item-action.btn-group(*ngIf="option.option === 'This week' || option.option === 'Last week'; else simpleOption", [ngClass]="{'active':ds.selectedOption === option.option}")
+        button((click)="setSubOption(option.option, option.currentSuboption);") {{option.option}} ({{option.currentSuboption}})
+        div.dropright.ml-auto
+          button.btn-right(data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+            i.fa.fa-caret-right
+          div.dropdown-menu.list-group
+            button.list-group-item.list-group-item-action(*ngFor="let suboption of option.subOptions", [ngClass]="{active:option.currentSuboption === suboption.name}", (click)="setSubOption(option.option, suboption.name, suboption.startDay, suboption.endDay);") {{suboption.name}}
+      ng-template(#simpleOption)
+        button.list-group-item.list-group-item-action((click)="setOption(option);", [ngClass]="{'active':ds.selectedOption === option.option}") {{option.option}}
+  .list-group
+    li.list-group-item.list-group-item-action((click)="setInputOption(days_to_today, 'days_to_today')", [ngClass]="{'active':ds.selectedOption === 'days_to_today'}")
+      .input-container
+        input.date-input(type="text", value="30", #days_to_today, (input)="setInputOption($event.target,'days_to_today')")
+        .input-underline
+      .days-text days up to today
+    li.list-group-item.list-group-item-action((click)="setInputOption(days_to_yesterday, 'days_to_yesterday')", [ngClass]="{'active':ds.selectedOption === 'days_to_yesterday'}")
+      .input-container
+        input.date-input(type="text", value="30", #days_to_yesterday, (input)="setInputOption($event.target,'days_to_yesterday')")
+        .input-underline
+      .days-text days up to yesterday

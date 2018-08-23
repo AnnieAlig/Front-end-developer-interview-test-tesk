@@ -1,0 +1,9 @@
+daterange-header
+
+.daterange-calendar
+  .dateramge-scroll(*ngFor="let year of years")
+    .month(*ngFor="let month of months; let monthNumber = index")
+      ng-container(*ngIf="monthNumber == currentMonth && year == currrentYear", #scrollTo)
+      h2.month-title {{month}} {{year}}
+      .day(*ngFor="let day of getAllDays(year, monthNumber+1)", (click)="setRange(day.fulldate)", attr.data-date="{{day.fulldate|date:'y-MM-dd'}}", [ngClass]="{'invisible': !day.number,'visible': day.number > 0,'today': day.today,'start_day': isStartDay(startDay,day.fulldate),'end_day': isEndDay(endDay,day.fulldate),'highlight': inRange(startDay,endDay,day.fulldate)}") {{day.number}}
+<!-- FIXME: active class + focus input -->

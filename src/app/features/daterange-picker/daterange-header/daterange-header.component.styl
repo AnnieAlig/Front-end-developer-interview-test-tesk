@@ -1,0 +1,67 @@
+.daterange-calendar-header
+    padding-top: 10px
+.date-inputs
+    line-height: 32px
+    color: rgba(0, 0, 0, 0.87)
+    font-size: 13px
+    min-height: 32px
+    margin-bottom: 10px
+    padding: 0 16px
+.date-input{
+    width: 100%;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+.date-input:focus ~ .input-underline{
+    transform: none;
+}
+.input-underline{
+    width: 100%;
+    height: 2px;
+    background-color: #4285f4;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transform: scale3d(0, 1, 1);
+    transition: transform .3s ease;
+}
+.input-container
+    position: relative
+    height: 100%
+    width: auto
+    margin-top: 8px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+    display: flex
+    align-items: center
+    max-width: 50%
+    &+span
+        margin: 0 8px
+        line-height: 45px
+    .error-text
+        position: absolute
+        font-size: 12px
+        line-height: 1.1
+        color: #c53929
+        bottom: -30px
+        opacity: 0
+        transition: all .3s ease
+    &.error
+        .input-underline
+            background-color: #c53929
+            transform: none
+        .error-text
+            opacity: 1
+
+.days
+    border-bottom: 1px solid #e0e0e0
+
+.day
+    width: 36px
+    height: 36px
+    text-align: center
+    font-size: 12px
+    line-height: 36px
+    color: rgba(0,0,0,.54)
+    text-transform: uppercase

@@ -1,0 +1,13 @@
+header.daterange-calendar-header
+  .date-inputs.d-flex.justify-content-between
+    .input-container([ngClass]="{'error':manuallyStartError}")
+      input(type="text", class="date-input", dateTransform, value="{{startDay | date: 'mediumDate'}}", (input)="setStartDayManually($event.target.value)")
+      .input-underline
+      .error-text {{manuallyStartError}}
+    span —
+    .input-container([ngClass]="{'error':manuallyEndError}")
+      input(type="text", class="date-input", dateTransform, value="{{endDay | date: 'mediumDate'}}", (input)="setEndDayManually($event.target.value)")
+      .input-underline
+      .error-text {{manuallyStartError}}
+  .days.d-flex.justify-content-between
+    .day(*ngFor="let weekDay of weekDays") {{ weekDay }}

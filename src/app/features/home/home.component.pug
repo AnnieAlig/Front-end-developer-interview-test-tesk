@@ -105,7 +105,9 @@
       .heading-wrap
         h2 Section title
         ng-container
-          p Place for range
+          div 
+            div.range_title {{ds.selectedOption}}
+            span {{rangeStart}} - {{rangeEnd}}
       .table-responsive
         table.table.table-striped.table-sm
           thead
@@ -211,5 +213,4 @@
               td sodales
               td ligula
               td in
-              td libero
-
+              td libero123
